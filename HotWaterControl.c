@@ -1,7 +1,12 @@
 
 
 #include "DS18B20.h"
+#include "HeaterController.h"
 #include <stdio.h>
+#include <unistd.h> /* Sleep */
+#include <time.h>   /* Timing for records */
+
+#define ENABLED_PIN 29u
 
 #ifndef TEST_ENV
     #define SENSOR_ID_TOP "28-011927419e6a" /* TAPE */
@@ -24,10 +29,12 @@ int main()
     Initialise(SENSOR_ID_BOTTOM, BOTTOM_OF_TANK, MAX_FILE_LENGTH);
     
 
-#ifdef TEST_ENV
+//#ifdef TEST_ENV
     printf("%d %d \n", GetRawValue(TOP_OF_TANK), GetRawValue(BOTTOM_OF_TANK));
 
-#endif
+//#endif
 
+	InitialiseWaterHeater(ENABLED_PIN);
+	CycleHeater();
 
 }

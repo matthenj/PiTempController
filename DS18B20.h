@@ -13,24 +13,19 @@
 *                   Written for UNIX
 *
 *   Revision Hist:  29-08-2020 V1.0 - Initial methods written.
+*		    08-09-2020 V1.1 - Adapted to work with multiple sensors
+*				      and error codes moved to seperate header
 *
 ******************************************************************************/ 
 
 #ifndef _DS18B20
 #define _DS18B20
 
-#define SUCCESS 0
-#define ERROR_CODE_START -195
-#define FILE_NOT_FOUND -200
-#define FILE_IO_ERROR -201
-#define STORAGE_POINTER_NULL -202
-#define STORAGE_POINTER_TO_SMALL -203
+#include "ErrorManagement.h"
 
 #define MAX_PATH 4096
 #define MAX_FILE_LENGTH 255
 
-#define TEST_ENV
-#define DEBUG
 
 
 #include <stdint.h>
