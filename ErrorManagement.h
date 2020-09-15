@@ -14,6 +14,8 @@
 #define __ERROR_MANAGEMENT
 
 #define SUCCESS 0
+#define HEATER_ON 1u
+#define HEATER_OFF 0u
 #define ERROR_CODE_START -195
 #define FILE_NOT_FOUND -200
 #define FILE_IO_ERROR -201
@@ -21,6 +23,13 @@
 #define STORAGE_POINTER_TO_SMALL -203
 #define WATER_HEATER_ALREADY_INIT -204
 #define WATER_HEATER_NOT_INIT -205
+#define UNKNOWN_STATE -206
+
+
+#define ABORT -240
+
+#define LOG_BY_DEFAULT 1
+#define LOGGING_ENABLED 1
 
 //#define TEST_ENV
 #define DEBUG
